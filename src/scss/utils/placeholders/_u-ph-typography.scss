@@ -1,0 +1,225 @@
+@import '../../utils/u-global-vars';
+@import '../../utils/u-rem';
+
+
+/* GENERIC PLACEHOLDERS */
+
+%typo-h1 {
+  font-family: $heading-font-family;
+  font-size: rem(31);
+  font-weight: $font-regular;
+  line-height: 1.3;
+  margin: 0;
+}
+
+%typo-h2 {
+  font-family: $heading-font-family;
+  font-size: rem(26);
+  font-weight: $font-regular;
+  line-height: 1.3;
+  margin: 0;
+}
+
+%typo-h3 {
+  font-family: $base-font-family;
+  font-size: rem(20);
+  font-weight: $font-regular;
+  line-height: 1.3;
+  margin: 0;
+}
+
+%typo-h4 {
+  font-family: $base-font-family;
+  font-size: rem(16);
+  font-weight: $font-regular;
+  line-height: 1.3;
+  margin: 0;
+}
+
+%typo-note {
+  font-family: $base-font-family;
+  font-size: rem(11);
+  line-height: 1.2;
+}
+
+%typo-title-modal {
+  font-family: $heading-font-family;
+  font-size: rem(16);
+  font-weight: $font-bold;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Component/Block scoped placeholders */
+
+%typo-component-title {
+    font-family: var(--heading-font-family);
+    font-size: rem(50);
+    font-weight: $font-light;
+    margin-bottom: rem(15);
+    color: var(--block-title-color, #{getColor('primary')});
+    line-height: 1.2em;
+}
+
+%typo-component-eyelet {
+    font-family: var(--base-font-family);
+    font-size: rem(14);
+    font-weight: $font-bold;
+    margin-bottom: rem(5);
+    color: getColor('secondary');
+    text-transform: uppercase;
+}
+
+%typo-component-subtitle {
+    font-family: var(--base-font-family);
+    font-size: rem(20);
+    font-weight: $font-regular;
+    margin-bottom: rem(15);
+    color: var(--block-text-color, inherit);
+}
+
+%typo-component-text {
+    font-family: var(--base-font-family);
+    font-size: rem(16);
+    font-weight: $font-regular;
+    margin-bottom: rem(30);
+    color: var(--block-text-color, inherit);
+    a {
+        color: var(--block-title-color, #{getColor('primary')});
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    p {
+        margin-bottom: rem(15);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    h4 {
+        font-size: rem(28);
+        font-weight: $font-light;
+        color: var(--block-title-color, #{getColor('primary')});
+        margin-bottom: rem(15);
+    }
+    h5 {
+        font-size: rem(20);
+        font-weight: $font-bold;
+        margin-bottom: rem(15);
+    }
+    ul, ol {
+        margin-bottom: rem(15);
+        padding-left: rem(20);
+    }
+    ul {
+        li {
+            list-style-type: disc;
+        }
+    }
+    ol {
+        li {
+            list-style-type: decimal;
+        }
+    }
+}
+
+%typo-card-title {
+    font-family: var(--heading-font-family);
+    font-size: rem(22);
+    font-weight: $font-regular;
+    color: var(--block-title-color, #{getColor('primary')});
+}
+
+%typo-card-eyelet {
+    font-family: var(--base-font-family);
+    font-size: rem(12);
+    font-weight: $font-bold;
+    margin-bottom: rem(5);
+    color: getColor('secondary');
+    text-transform: uppercase;
+}
+
+%typo-card-text {
+    font-family: var(--base-font-family);
+    font-size: rem(14);
+    font-weight: $font-regular;
+    margin-top: rem(10);
+    color: var(--block-text-color, inherit);
+    a {
+        color: var(--block-title-color, #{getColor('primary')});
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    p {
+        margin-bottom: rem(5);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    h4 {
+        font-size: rem(24);
+        font-weight: $font-light;
+        color: var(--block-title-color, #{getColor('primary')});
+        margin-bottom: rem(15);
+    }
+    h5 {
+        font-size: rem(18);
+        font-weight: $font-bold;
+        margin-bottom: rem(15);
+    }
+    ul, ol {
+        margin-bottom: rem(5);
+        padding-left: rem(15);
+    }
+    ul {
+        li {
+            list-style-type: disc;
+        }
+    }
+    ol {
+        li {
+            list-style-type: decimal;
+        }
+    }
+}
+
+@include responsiveTo('lg') {
+    %typo-component-title {
+        font-size: rem(35);
+        margin-bottom: rem(20);
+    }
+
+    %typo-component-subtitle {
+        font-size: rem(16);
+    }
+
+    %typo-component-text {
+        font-size: rem(14);
+        h4, h5, p, ul, ol {
+            margin-bottom: rem(10);
+        }
+        h4 {
+            font-size: rem(24);
+        }
+        h5 {
+            font-size: rem(18);
+        }
+    }
+
+    %typo-card-title {
+        font-size: rem(20);
+    }
+
+    %typo-card-text {
+        h4 {
+            font-size: rem(20);
+        }
+        h5 {
+            font-size: rem(16);
+        }
+    }
+}
+

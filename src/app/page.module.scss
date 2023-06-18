@@ -1,0 +1,20 @@
+@import '../scss/utils/u-grid';
+@import '../scss/utils/placeholders/u-ph-typography';
+
+
+.content {
+  @include mainContainer();
+  border:1px solid red;
+  .title {
+    color: green;
+    font-weight: 700;
+    @extend %typo-component-title;
+  }
+  .image {
+    border: 1px solid orange;
+    padding: 1rem;
+    .logo {
+      border: 1px solid blue;
+    }
+  }
+}

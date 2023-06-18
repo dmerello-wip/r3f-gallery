@@ -1,0 +1,32 @@
+@import '../utils/u-colors';
+
+
+$background-color: #ffffff !default;
+$font-color: #000000 !default;
+$global-prefix: "theme" !default;
+
+// creates colors at root as custom variables
+@each $color, $val in $theme-colors {
+  .text-#{$color} {
+    color: $val !important;
+  }
+  .bg-color-#{$color} {
+    background-color: $val !important;
+  }
+}
+
+//generate all colors as variables at root;
+:root {
+  @each $color, $val in $theme-colors {
+    --#{$global-prefix}-color-#{$color}: #{$val};
+  }
+}
+/* setup classes by common twill field 'text color'*/
+.block-text-light{
+    --block-title-color: #{getColor('light')};
+    --block-text-color: #{getColor('light')};
+}
+.block-text-dark{
+    --block-title-color: #{getColor('primary')};
+    --block-text-color: #{getColor('dark')};
+}

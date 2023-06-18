@@ -1,0 +1,37 @@
+.pagination {
+  --size-square-links: #{rem(20)};
+  --nav-flex-justify: center;
+  width: 100%;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: var(--nav-flex-justify, center);
+    li {
+      margin: 0 rem(2);
+      background: getColor("grey-05");
+      a {
+        width: var(--size-square-links);
+        height: var(--size-square-links);
+        font-size: rem(12);
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &.active {
+        color: getColor("light");
+        background: getColor("grey-03");
+      }
+    }
+  }
+  &.pag-right {
+    --nav-flex-justify: flex-end;
+  }
+  &.pag-left {
+    --nav-flex-justify: flex-start;
+  }
+}

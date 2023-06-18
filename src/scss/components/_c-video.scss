@@ -1,0 +1,29 @@
+.c-video {
+    --title-align: center;
+    @extend %component-padding;
+    /* */
+    &.text-left {
+        --title-align: left;
+    }
+    &.text-center {
+        --title-align: center;
+    }
+    &.text-right {
+        --title-align: right;
+    }
+    .video {
+        &__wrapper {
+            @include mainContainer();
+        }
+        &__title {
+            @extend %typo-component-title;
+            margin-bottom: rem(40);
+            text-align: var(--title-align);
+        }
+        &__video {
+            .plyr__poster {
+                background-size: cover;
+            }
+        }
+    }
+}

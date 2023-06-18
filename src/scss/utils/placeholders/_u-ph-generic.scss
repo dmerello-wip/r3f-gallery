@@ -1,0 +1,16 @@
+%component-padding {
+  padding: rem(80) 0;
+  &.no-margin-bottom {
+    padding-bottom: 0;
+  }
+  @include responsiveTo(lg) {
+    padding: rem(40) 0;
+  }
+}
+
+%absoluteCentered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

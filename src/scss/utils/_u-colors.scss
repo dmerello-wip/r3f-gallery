@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "sass:meta";
+
+$theme-custom-colors: () !default;
+$theme-default-colors: (
+  "primary": #a3104d,
+  "secondary": #f78f08,
+  "light": #ffffff,
+  "dark": #2e2e2e,
+  "grey": #5b5b5b,
+  "grey-02": #838282,
+  "grey-03": #979797,
+  "grey-04": #c4c4c4,
+  "grey-05": #f6f6f6,
+  "border": #cccccc,
+  "border-light": #e5e5e5,
+  "error": #eb5757,
+  "warning": #e6b20d,
+  "success": #548e1d,
+  "info": #005f82,
+);
+
+@function setUpColors() {
+  @if meta.variable-exists("theme-custom-colors") {
+    @return map.merge($theme-default-colors, $theme-custom-colors);
+  }
+}
+
+$theme-colors: setUpColors();
+
+@function getColor($key: "primary") {
+  @return map.get($theme-colors, $key);
+}

@@ -1,0 +1,75 @@
+%base-btn {
+  display: inline-block;
+  padding: rem(10) rem(20);
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: rem(4);
+  font-size: rem(12);
+  min-height: rem(25);
+  text-decoration: none;
+  text-align: center;
+  font-weight: $font-bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+  }
+  &[data-default-label] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:before {
+      content: attr(data-default-label);
+      display: block;
+    }
+    &:disabled {
+      &:before {
+        content: attr(data-disabled-label);
+      }
+    }
+  }
+  &.btn--large {
+    min-height: rem(32);
+    font-size: rem(14);
+  }
+  &.btn--wide {
+    width: 100%;
+  }
+  &.btn--icon-left,
+  &.btn--icon-right {
+    i.icon {
+      --icon-size: 1em;
+    }
+  }
+  &.btn--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 rem(3);
+    i.icon {
+      --icon-size: #{rem(16)};
+    }
+  }
+  &.btn--icon-left,
+  &.btn--icon-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &.btn--icon-left {
+    i.icon {
+      margin: 0 rem(10) 0 0;
+    }
+  }
+  &.btn--icon-right {
+    i.icon {
+      margin: 0 0 0 rem(10);
+    }
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+    background-color: getColor("gray");
+    color: getColor("secondary");
+  }
+}

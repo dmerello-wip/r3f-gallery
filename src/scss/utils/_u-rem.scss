@@ -1,0 +1,28 @@
+@use "sass:math";
+/* ===BASELINE=== */
+/**
+ * Ref: http://www.modularscale.com/
+ */
+$rem-baseline: 10;
+$global-font-size: 62.5% !default;
+
+/* ===REM FUNCTION=== */
+/**
+ * Sassy functions to get the rem equivalent of a px value
+ * preset-css-env will take care of fallback for older browsers
+ * !NOTE: you only need to change the $rem-baseline value if your base size
+ * is different from 10px (use typography.scss in case)
+ * @param value is referred to px
+ * Credits: Rowan Manning
+ */
+@function rem($value, $rem-baseline: $rem-baseline) {
+  /* If value is a number, do some magic rem stuff */
+  @if type-of($value) == "number" {
+    /* Slightly hacky way of removing unit */
+    $unitless-value: math.div($value, ($value * 0 + 1));
+    /* Return rem value */
+    @return #{math.div($unitless-value, $rem-baseline)}rem;
+  }
+  /* Non-numeric value, just return */
+  @return $value;
+}

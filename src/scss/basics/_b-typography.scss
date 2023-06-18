@@ -1,0 +1,145 @@
+@import '../utils/u-global-vars';
+@import '../utils/placeholders/u-ph-typography';
+
+
+:root {
+    // as per rem() method in _u-rem.scss with low-scaling under "md".
+    // base size is 10 to mantain rem() function
+    --global-font-size: 62.5%;
+    --base-font-family: 'Plus Jakarta Sans', sans-serif;
+    --heading-font-family: 'Plus Jakarta Sans', sans-serif;
+}
+body {
+  font-size: rem(14);
+  font-family: $base-font-family;
+  line-height: 1.2rem;
+}
+p {
+  margin: 0 auto rem(10);
+  line-height: 1.4;
+}
+h1,h2,h3,h4,h5,h6{
+  font-size: 1rem;
+  margin: 0;
+}
+.h1 {
+  @extend %typo-h1;
+}
+.h2 {
+  @extend %typo-h2;
+}
+.h3 {
+  @extend %typo-h3;
+}
+.h4 {
+  @extend %typo-h4;
+}
+
+.note {
+  @extend %typo-note;
+}
+
+hr {
+  margin: 1rem 0;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid getColor("border");
+}
+
+//Alignments
+.txt-left {
+  text-align: left !important;
+}
+.txt-center {
+  text-align: center !important;
+}
+.txt-right {
+  text-align: right !important;
+}
+.txt-justify {
+  text-align: justify !important;
+}
+//Transforms
+.txt-uppercase {
+  text-transform: uppercase !important;
+}
+.txt-lowercase {
+  text-transform: lowercase !important;
+}
+.txt-capitalize {
+  text-transform: capitalize !important;
+}
+//Font style
+.f-italic,
+.i {
+  font-style: italic !important;
+}
+
+.f-serif {
+  font-family: $heading-font-family;
+}
+
+// Font sizes
+.fs--1 {
+  font-size: rem(31);
+}
+
+.fs--2 {
+  font-size: rem(26);
+}
+
+.fs--3 {
+  font-size: rem(20);
+}
+
+.fs--4 {
+  font-size: rem(16);
+}
+
+.fs--base {
+  font-size: rem(14) !important;
+}
+
+// typography classes
+.code {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.strong {
+  font-weight: bolder;
+}
+
+.em {
+  font-style: italic;
+}
+
+.u {
+  text-decoration: underline;
+}
+
+.var {
+  font-style: italic;
+}
+
+ul.styled,
+ul.styled > li {
+  list-style: disc outside none;
+  &--dash > li {
+    list-style: none;
+    padding-left: 1rem;
+    &:before {
+      display: inline-block;
+      content: "-";
+      width: 1rem;
+      margin-left: -1rem;
+    }
+  }
+}
+
+ul.styled,
+ol.styled {
+  margin: 0 0 rem(15) rem(12);
+  padding: 0;
+}

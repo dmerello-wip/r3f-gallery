@@ -1,0 +1,29 @@
+/* We got our svg sprite definitions inserted directly at markup so we need to hide this svg*/
+#icons-symbols {
+  display: none;
+}
+/*Icon svg wrapped into .icon element */
+.icon {
+  --icon-size: #{rem(14)};
+  color: currentColor;
+  display: inline-block;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  @include responsiveFrom("lg") {
+    --icon-size: #{rem(16)};
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &.i-2x {
+    --icon-size: #{rem(24)};
+  }
+  &.i-3x {
+    --icon-size: #{rem(32)};
+  }
+  &.i-4x {
+    --icon-size: #{rem(48)};
+  }
+}

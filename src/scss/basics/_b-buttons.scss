@@ -1,0 +1,124 @@
+@import '../utils/placeholders/u-ph-buttons';
+
+
+button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  &--primary {
+    @extend %base-btn;
+    border: 1px solid getColor('primary');
+    background-color: getColor('light');
+    color: getColor('primary');
+    &:hover {
+      color: getColor('light');
+      background-color: getColor('primary');
+    }
+  }
+  &--secondary {
+    @extend %base-btn;
+    border: 1px solid getColor('primary');
+    background-color: getColor('primary');
+    color: getColor('light');
+    &:hover {
+      color: getColor('primary');
+      background-color: getColor('light');
+    }
+  }
+  &--stroked {
+    @extend %base-btn;
+    //specific btn styles here
+  }
+  &--primary-stroked {
+    @extend %base-btn;
+    //specific btn styles here
+  }
+  &--grey-stroked {
+    @extend %base-btn;
+    //specific btn styles here
+  }
+  &--text {
+    @extend %base-btn;
+    //specific btn styles here
+  }
+}
+
+.svg-hamburger {
+  .line-top,
+  .line-center,
+  .line-bottom {
+    transform-origin: center;
+    transition: transform 0.7s ease-in-out;
+  }
+  .line-top {
+    transform: translateY(-25%);
+  }
+  .line-bottom {
+    transform: translateY(25%);
+  }
+  &.open-status {
+    .line-top {
+      transform: rotate(45deg);
+    }
+    .line-center {
+      transform: scale(0);
+    }
+    .line-bottom {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+/*
+SIZE OPTION
+It's a size input selector GENERALLY AT PDPages
+<label class="size-option">
+    <input type="radio" data-size-option="38" name="id" value="option-value">
+    <span class="size-option__box">
+        <span class="size-option__box__label">
+            38
+        </span>
+    </span>
+</label>
+*/
+.size-option {
+  --size-option: #{rem(40)};
+  --border-box-color: transparent;
+  --size-text-decoration: none;
+  font-size: rem(14);
+  cursor: pointer;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    &:checked {
+      & ~ * {
+        //--border-box-color: #{getColor('text-dark')};
+        --size-text-decoration: underline;
+        font-weight: $font-bold;
+      }
+    }
+  }
+  &__box {
+    width: var(--size-option);
+    height: var(--size-option);
+    border: 1px solid var(--border-box-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &__label {
+      text-decoration: var(--size-text-decoration);
+    }
+  }
+}

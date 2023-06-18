@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: $background-color;
+  color: $font-color;
+  box-sizing: border-box;
+  //scroll-behavior: smooth; /* Supported by firefox and Chrome only. Use a fallback for unsupported browsers, if you need. */
+  /**
+     * We are assuming to be dealing with a browser set to ‘medium’ text.
+     * The default size for ‘medium’ text in all modern browsers is 16px
+     * We'll be using rem unit throughout the project, this meaning that
+     * if you need to reduce the base font size for the entire document
+     * you can simply edit this percentage value.
+     * Ref: https://snook.ca/archives/html_and_css/font-size-with-rem
+     */
+  font-size: $global-font-size;
+
+  *,
+  *:before,
+  *:after {
+    /**
+         * Use inheritance here in order to make easier
+         * to change the box-sizing in plugins or other components that leverage other behavior.
+         * Credits: Jonathan Neal http://blog.teamtreehouse.com/box-sizing-secret-simple-css-layouts#comment-50223
+         */
+    box-sizing: inherit;
+  }
+  .loading,
+  .loading-cta {
+    cursor: wait !important;
+  }
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1.3;
+  color: getColor("dark");
+  font-weight: $font-regular;
+  font-family: $base-font-family;
+  letter-spacing: 0.5px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+.container {
+  @include mainContainer();
+}
+
+a {
+  color: currentColor;
+  &:hover {
+    color: currentColor;
+  }
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+figure {
+  margin: 0;
+}
+
+picture {
+  display: inline-block;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-default {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+// HIDE PRINT TEMPLATE on screen media query
+// do not edit this class
+// -----------------------------------------
+
+#print-template {
+  display: none;
+}

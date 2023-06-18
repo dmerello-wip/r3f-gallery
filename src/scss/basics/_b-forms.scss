@@ -1,0 +1,327 @@
+/* PLACEHOLDERS */
+%text-input-transparent {
+  background: transparent;
+  border: none;
+  appearance: none;
+  min-height: rem(50);
+  padding: rem(5);
+}
+
+%text-input-stroked {
+  color: currentColor;
+  height: var(--input-height, #{rem(50)});
+  min-width: var(--input-width, #{rem(120)});
+  width: 100%;
+  padding: rem(10) rem(15);
+  border: 1px solid var(--input-border-color, currentColor);
+  font-size: var(--input-f-size, #{rem(14)});
+  border-radius: rem(5);
+  background-color: var(--input-bg-color, transparent);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+select {
+  @extend %text-input-stroked;
+}
+
+/*specific input number override*/
+input[type="number"] {
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+select {
+  &[multiple] {
+    min-height: rem(100);
+  }
+}
+select,
+textarea {
+  appearance: none;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  min-height: rem(200);
+  resize: none;
+}
+
+/* CUSTOM INPUTS */
+
+/* FORM CHECKBOX
+<label class="form-checkbox ">
+    <span class="form-checkbox__input">
+        <!--INPUT-->
+        <input type="checkbox" name="input_name">
+        <!--CHECKBOX CUSTOM-->
+        <span class="checkbox"></span>
+    </span>
+    <span class="form-checkbox__label">Label here</span>
+</label>
+*/
+.form-checkbox {
+  display: block;
+  margin-bottom: rem(7);
+  &.inline-field {
+    display: inline-block;
+    margin-right: rem(15);
+  }
+  .form-checkbox {
+    &__input {
+      --input-check-border-color: #{getColor("grey-02")};
+      --input-check-bg: #{getColor("light")};
+      --input-check-opacity: 0;
+      display: inline-block;
+      width: rem(14);
+      height: rem(14);
+      position: relative;
+      color: getColor("dark");
+      input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &:checked {
+          & ~ .checkbox {
+            --input-check-border-color: #{getColor("primary")};
+            --input-check-color: #{getColor("light")};
+            --input-check-bg: #{getColor("primary")};
+            --input-check-opacity: 1;
+          }
+        }
+        &:disabled,
+        &[readonly] {
+          & ~ .checkbox {
+            --input-check-border-color: #{getColor("grey-03")};
+            --input-check-color: #{getColor("light")};
+            --input-check-bg: #{getColor("grey-03")};
+            --input-check-opacity: 0;
+          }
+        }
+        &[readonly]:checked {
+          & ~ .checkbox {
+            --input-check-opacity: 1;
+          }
+        }
+      }
+      .checkbox {
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        border: 2px solid var(--input-check-border-color, currentColor);
+        border-radius: 2px;
+        background: var(--input-check-bg);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:after {
+          content: "";
+          opacity: var(--input-check-opacity);
+          width: 50%;
+          height: 100%;
+          border: 2px solid var(--input-check-color, currentColor);
+          border-left: none;
+          border-top: none;
+          transform: translate(0%, -10%) rotate(45deg) scale(0.8);
+        }
+      }
+    }
+    &__label {
+      display: inline-block;
+      margin-left: rem(10);
+    }
+  }
+}
+/*RADIO INPUT*/
+.form-radio {
+  display: block;
+  margin-bottom: rem(7);
+  &.inline-field {
+    display: inline-block;
+    margin-right: rem(15);
+  }
+  .form-radio {
+    &__input {
+      --input-radio-border-color: #{getColor("grey-02")};
+      --input-radio-bg: transparent;
+      display: inline-block;
+      width: rem(14);
+      height: rem(14);
+      position: relative;
+      input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &:checked {
+          & ~ .radio {
+            --input-radio-border-color: #{getColor("primary")};
+            --input-radio-disc-bg: #{getColor("primary")};
+            --input-radio-opacity: 1;
+          }
+        }
+        &:disabled {
+          & ~ .radio {
+            --input-radio-bg: #{getColor("grey-03")};
+            --input-radio-border-color: #{getColor("grey-03")};
+            --custom-check-color: #{getColor("light")};
+            --custom-check-opacity: 1;
+          }
+        }
+      }
+      .radio {
+        width: 100%;
+        height: 100%;
+        color: inherit;
+        border: 2px solid var(--input-radio-border-color, currentColor);
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--input-radio-bg);
+        &:after {
+          content: "";
+          opacity: var(--input-radio-opacity);
+          width: 100%;
+          height: 100%;
+          transform: scale(0.8);
+          background: var(--input-radio-disc-bg);
+          border-radius: 50%;
+        }
+      }
+    }
+    &__label {
+    }
+  }
+}
+
+.form-input,
+.form-select {
+  --display-error-msg: none;
+  --input-txt-color: #{getColor("dark")};
+  --input-border-color: #{getColor("grey-03")};
+  --input-bg-wrapper: #{getColor("light")};
+  position: relative;
+  margin-bottom: rem(10);
+  &.inline-field {
+    display: inline-block;
+    margin-right: rem(15);
+  }
+  & > label {
+    display: block;
+    margin-bottom: rem(7);
+    font-size: rem(14);
+  }
+  .form-input,
+  .form-select {
+    &__wrapper {
+      position: relative;
+      color: var(--input-txt-color);
+      input,
+      select {
+        @extend %text-input-stroked;
+        background-color: var(--input-bg-wrapper);
+        &:disabled {
+          --input-bg-wrapper: #{getColor("grey-04")};
+          & ~ .form-select__icon {
+            --input-txt-color: #{getColor("grey-03")};
+          }
+        }
+      }
+      input {
+        &:read-only {
+          color: getColor("grey");
+        }
+      }
+    }
+    //__trigger only for textual inputs when need a button trigger into field overlay with icon
+    //difference with __icon is simply the pointer events
+    &__icon,
+    &__trigger {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: rem(40);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--input-txt-color);
+    }
+    &__icon {
+      pointer-events: none;
+    }
+    &__error {
+      display: var(--display-error-msg);
+      margin-top: rem(5);
+      color: var(--input-txt-color);
+      font-size: rem(12);
+    }
+  }
+  /*specific select input*/
+  .form-select {
+    &__icon {
+      .icon {
+        --icon-size: #{rem(10)};
+      }
+    }
+    //SELECT input read only
+    &.read-only-select {
+      --input-bg-wrapper: transparent;
+      //--input-txt-color: #{getColor('grey-03')};
+    }
+  }
+
+  //STATES
+  &.warning {
+    --input-txt-color: #{getColor("warning")};
+    --input-border-color: #{getColor("warning")};
+  }
+  &.error {
+    --display-error-msg: block;
+    --input-txt-color: #{getColor("error")};
+    --input-border-color: #{getColor("error")};
+  }
+  &.success {
+    --input-txt-color: #{getColor("success")};
+    --input-border-color: #{getColor("success")};
+  }
+  //sizes
+  &.input-sm {
+    --input-height: #{rem(28)};
+    --input-f-size: #{rem(12)};
+  }
+}
+
+.size-input-box {
+  width: rem(24);
+  height: rem(22);
+  background-color: transparent;
+  input {
+    text-align: center;
+    min-width: auto;
+    width: 100%;
+    height: 100%;
+    padding: rem(2);
+    font-size: rem(12);
+    line-height: 1;
+    border: none;
+    border-bottom: 1px solid getColor('dark');
+    border-radius: 0;
+    &:placeholder-shown {
+      background-color: getColor("grey-05");
+    }
+  }
+}

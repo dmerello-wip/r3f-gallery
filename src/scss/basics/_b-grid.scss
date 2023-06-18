@@ -1,0 +1,23 @@
+@import '../utils/u-grid';
+
+:root {
+    --grid-cols-default: 20;
+    --grid-gapx-default: 20;
+    --grid-gapy-default: 10;
+    --grid-gap: 20;
+    --main-container-pad-x: 20;
+}
+
+@include responsiveFrom("lg") {
+  :root {
+    --main-container-pad-x: 30;
+  }
+}
+@include responsiveFrom("xl") {
+  :root {
+    --main-container-pad-x: 100;
+  }
+}
+
+$mainContainerPadX: calc(var(--main-container-pad-x) * 1px);
+$mainContainerPadY: calc(var(--main-container-pad-x) * 0.5px);

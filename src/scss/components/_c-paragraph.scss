@@ -1,0 +1,85 @@
+.c-paragraph {
+    --paragraph-wrapper-max-width: 70%;
+
+    --paragraph-flex-align: flex-start;
+    --paragraph-text-align: left;
+
+    --paragraph-col-count: 1;
+
+    @extend %component-padding;
+    
+    &.text-center {
+        --paragraph-text-align: center;
+    }
+
+    &.cols-2 {
+        --paragraph-wrapper-max-width: 80%;
+        --paragraph-flex-align: center;
+        --paragraph-col-count: 2;
+    }
+
+    .paragraph {
+        &__wrapper{
+            @include mainContainer();
+        }
+        &__content {
+            max-width: var(--paragraph-wrapper-max-width);
+            display: flex;
+            flex-direction: column;
+            align-items: var(--paragraph-flex-align);
+            text-align: var(--paragraph-text-align);
+            margin: 0 auto;
+        }
+        &__eyelet {
+            @extend %typo-component-eyelet;
+            text-align: var(--paragraph-text-align);
+            align-self: stretch;
+        }
+        &__title {
+            @extend %typo-component-title;
+            text-align: var(--paragraph-text-align);
+            align-self: stretch;
+        }
+        &__subtitle {
+            @extend %typo-component-subtitle;
+            text-align: var(--paragraph-text-align);
+        }
+        &__rich-text {
+            @extend %typo-component-text;
+            text-align: var(--paragraph-text-align);
+            column-count: var(--paragraph-col-count);
+            gap: rem(60);
+            margin-top: rem(30);
+            * {
+                margin-top: 0;
+            }
+        }
+        &__ctas {
+            width: fit-content;
+            display: flex;
+            column-gap: rem(20);
+        }
+    }
+}
+
+@include responsiveTo("md") {
+    .c-paragraph {
+        --paragraph-wrapper-max-width: 100%;
+        &.cols-2 {
+            --paragraph-wrapper-max-width: 100%;
+            --paragraph-flex-align: stretch;
+            --paragraph-col-count: 1;
+        }
+        .paragraph {
+            &__wrapper {
+                max-width: 100%;
+            }
+            &__ctas {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: rem(10);
+            }
+        }
+    }
+}

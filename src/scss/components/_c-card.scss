@@ -1,0 +1,55 @@
+.c-card {
+    .card {
+        &__wrapper {
+            background-color: transparent;
+        }
+        &__img {
+            width: 100%;
+            line-height: 0;
+            img {
+                width: 100%;
+            }
+        }
+        &__content {
+            padding: rem(10) rem(10) 0 rem(10);
+        }
+        &__eyelet {
+            @extend %typo-card-eyelet;
+            align-self: stretch;
+        }
+        &__title {
+            @extend %typo-card-title;
+            align-self: stretch;
+        }
+        &__text {
+            @extend %typo-card-text;
+        }
+        &__links {
+            display: flex;
+            flex-direction: column;
+            gap: rem(10);
+        }
+        &__ctas {
+            margin-top: rem(20);
+        }
+    }
+
+    &.reveal-on-hover {
+        --card-ctas-display: none;
+        &:hover {
+            position: relative;
+            --card-wrapper-position: absolute;
+            --card-ctas-display: flex;
+        }
+        .card {
+            &__wrapper {
+                position: var(--card-wrapper-position, static);
+                inset: 0 0 auto;
+            }
+            &__ctas {
+                display: var(--card-ctas-display, flex);
+            }
+        }
+    } 
+}
+
