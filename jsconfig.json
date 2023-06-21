@@ -4,6 +4,7 @@
       "@/*": ["./src/*"],
       "@/scss/*": ["./src/scss/*"],
       "@/components/*": ["components/*"],
+      "@/db/*": ["./data/*"],
     }
   }
 }

@@ -1,0 +1,130 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "slug": "le-belle-nanette",
+      "title": "le belle nanette",
+      "description": "le belle nanette",
+      "picture": "http://localhost:3000/images/works/work_1.jpg"
+    },
+    {
+      "id": 2,
+      "slug": "tapioche-distruttive",
+      "title": "tapioche distruttive",
+      "description": "tapioche distruttive",
+      "picture": "http://localhost:3000/images/works/work_2.jpg"
+    },
+    {
+      "id": 3,
+      "slug": "la-misa-e-il-legnetto",
+      "title": "la misa e il legnetto",
+      "description": "la misa e il legnetto",
+      "picture": "http://localhost:3000/images/works/work_3.jpg"
+    },
+    {
+      "id": 4,
+      "slug": "cani",
+      "title": "cani",
+      "description": "cani",
+      "picture": "http://localhost:3000/images/works/work_4.jpg"
+    },
+    {
+      "id": 5,
+      "slug": "cose-fatte-a-caso",
+      "title": "cose fatte a caso",
+      "description": "cose fatte a caso",
+      "picture": "http://localhost:3000/images/works/work_5.jpg"
+    },
+    {
+      "id": 6,
+      "slug": "un-titolo-come-unaltro",
+      "title": "un titolo come un'altro",
+      "description": "un titolo come un'altro",
+      "picture": "http://localhost:3000/images/works/work_6.jpg"
+    },
+    {
+      "id": 7,
+      "slug": "cipperelloa",
+      "title": "cipperelloa",
+      "description": "cipperelloa",
+      "picture": "http://localhost:3000/images/works/work_7.jpg"
+    },
+    {
+      "id": 8,
+      "slug": "come-un-gatto-sordo",
+      "title": "come un gatto sordo",
+      "description": "come un gatto sordo",
+      "picture": "http://localhost:3000/images/works/work_8.jpg"
+    },
+    {
+      "id": 9,
+      "slug": "la-pelota",
+      "title": "la pelota",
+      "description": "la pelota",
+      "picture": "http://localhost:3000/images/works/work_9.jpg"
+    },
+    {
+      "id": 10,
+      "slug": "anni-di-piombino",
+      "title": "anni di piombino",
+      "description": "anni di piombino",
+      "picture": "http://localhost:3000/images/works/work_10.jpg"
+    },
+    {
+      "id": 11,
+      "slug": "articoli-di-caza",
+      "title": "articoli di caza",
+      "description": "articoli di caza",
+      "picture": "http://localhost:3000/images/works/work_11.jpg"
+    },
+    {
+      "id": 12,
+      "slug": "pelosetto-nerone",
+      "title": "pelosetto nerone",
+      "description": "pelosetto nerone",
+      "picture": "http://localhost:3000/images/works/work_12.jpg"
+    },
+    {
+      "id": 13,
+      "slug": "pota",
+      "title": "pota",
+      "description": "pota",
+      "picture": "http://localhost:3000/images/works/work_13.jpg"
+    },
+    {
+      "id": 14,
+      "slug": "similitudini",
+      "title": "similitudini",
+      "description": "similitudini",
+      "picture": "http://localhost:3000/images/works/work_14.jpg"
+    },
+    {
+      "id": 15,
+      "slug": "la-citofoneria-cosmica",
+      "title": "la citofoneria cosmica",
+      "description": "la citofoneria cosmica",
+      "picture": "http://localhost:3000/images/works/work_15.jpg"
+    },
+    {
+      "id": 16,
+      "slug": "prante",
+      "title": "prante",
+      "description": "prante",
+      "picture": "http://localhost:3000/images/works/work_16.jpg"
+    },
+    {
+      "id": 17,
+      "slug": "preti-neri-e-bianchi",
+      "title": "preti neri e bianchi",
+      "description": "preti neri e bianchi",
+      "picture": "http://localhost:3000/images/works/work_17.jpg"
+    },
+    {
+      "id": 18,
+      "slug": "colinco-di-dola",
+      "title": "colinco di dola",
+      "description": "colinco di dola",
+      "picture": "http://localhost:3000/images/works/work_18.jpg"
+    }
+  ]
+}
