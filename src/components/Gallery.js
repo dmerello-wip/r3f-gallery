@@ -4,7 +4,7 @@ import {useFrame, useLoader} from '@react-three/fiber';
 import NormalizeWheel from 'normalize-wheel';
 import gsap, {TweenMax, Expo} from 'gsap';
 
-const Gallery = ({contents, radius, itemClick}) => {
+const Gallery = ({contents, radius}) => {
 
 
   const gallery = useRef();
@@ -81,7 +81,7 @@ const Gallery = ({contents, radius, itemClick}) => {
   useEffect(() => {
     initialAnimation().then(() => {
       interactionEnabled.current = true;
-      let scrollTgtElement = document.querySelector('.stage');
+      let scrollTgtElement = document.querySelector('#stage');
       scrollTgtElement.addEventListener('mousewheel', onWheel);
       scrollTgtElement.addEventListener('touchstart', onTouchStart);
       scrollTgtElement.addEventListener('touchmove', onTouchMove);
@@ -107,7 +107,6 @@ const Gallery = ({contents, radius, itemClick}) => {
         position={[x, 0, z]}
         initialRotation={[0, rot, 0]}
         slug={el.slug}
-        clickHandler={itemClick}
       />;
     });
   };

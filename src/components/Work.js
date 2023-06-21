@@ -3,7 +3,7 @@ import {Box, Html} from '@react-three/drei';
 import {useFrame} from '@react-three/fiber';
 import * as THREE from 'three';
 
-const Work = ({position, initialRotation, picture, slug, title, clickHandler}) => {
+const Work = ({position, initialRotation, picture, slug, title}) => {
 
   const baseSize = [1, 1, 0.02];
 
@@ -40,7 +40,7 @@ const Work = ({position, initialRotation, picture, slug, title, clickHandler}) =
         // rotate obj y accordingly on how precisely it's centered in x
         workMesh.current.rotation.y = THREE.MathUtils.degToRad( ( 180 / inViewRangeX ) * ( inViewRangeX - absolutePositionInWorld.x ) );
         // opacity as invert of distance of x from 0 -1
-        setBtnOpacity( - (MathUtils.abs(absolutePositionInWorld.x) - 1) );
+        setBtnOpacity( - (Math.abs(absolutePositionInWorld.x) - 1) );
       }
   });
 
@@ -52,7 +52,6 @@ const Work = ({position, initialRotation, picture, slug, title, clickHandler}) =
       rotation={initialRotation}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
-      onPointerUp={()=>{clickHandler(slug)}}
     >
       <Html position={[0,-1,0]}>
         <div className="work__content" style={{opacity:btnOpacity}}>
