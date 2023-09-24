@@ -59,16 +59,15 @@ const Work = ({position, initialRotation, picture, slug, title}) => {
         </div>
       </Html>
       <Box castShadow ref={workMesh} args={size}>
-        <meshStandardMaterial attachArray="material" color="white"/>
-        <meshStandardMaterial attachArray="material" color="white"/>
-        <meshStandardMaterial attachArray="material" color="white"/>
-        <meshStandardMaterial attachArray="material" color="white"/>
+        <meshStandardMaterial color="red"/>
+        <meshStandardMaterial color="blue"/>
+        <meshStandardMaterial color="green"/>
+        <meshStandardMaterial color="purple"/>
+        <meshStandardMaterial color="black"/>
+        <meshStandardMaterial color="yellow"/>
         <meshStandardMaterial
-          attachArray="material"
           map={texture}
-          transparent={true}
         />
-        <meshStandardMaterial attachArray="material" color="white"/>
       </Box>
     </group>
   );

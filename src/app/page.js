@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Stage from '@/components/Stage'
 import styles from '@/scss/pages/home.module.scss'
 

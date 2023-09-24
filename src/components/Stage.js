@@ -1,6 +1,6 @@
 'use client'
 
-import {Suspense, useRef, useState} from "react";
+import {Suspense, useEffect, useRef, useState} from "react";
 import {Canvas} from "@react-three/fiber";
 import {Box} from "@react-three/drei";
 import Gallery from '@/components/Gallery';
@@ -19,7 +19,6 @@ const Stage = ({contents}) => {
   const radius = contents.length / 2.5;
   const cameraPosition = [0, 1, radius + 3];
   const fogDistance = radius * 2.5;
-
 
   return (
     <div className={styles.stage} id="stage">
